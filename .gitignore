@@ -1,6 +1,6 @@
 .idea
 .DS_Store
-AssecorAssessmentBackend/AssecorAssessmentBackend/bin
-AssecorAssessmentBackend/AssecorAssessmentBackend/obj
-AssecorAssessmentBackend/AssecorAssessmentBackendTests/bin
-AssecorAssessmentBackend/AssecorAssessmentBackendTests/obj
+AssecorAssessmentBackend/bin
+AssecorAssessmentBackend/obj
+AssecorAssessmentBackendTests/bin
+AssecorAssessmentBackendTests/obj
