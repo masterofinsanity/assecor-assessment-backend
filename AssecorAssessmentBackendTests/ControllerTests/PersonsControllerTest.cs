@@ -15,8 +15,8 @@ public sealed class PersonsControllerTest
     private readonly Person[] _persons = [
         new Person { 
             Id = 1,
-            LastName = "Zimmer", 
-            FirstName = "Hans", 
+            LastName = "Page", 
+            FirstName = "Jimmy", 
             City = "Kuchen", 
             PostalCode = "73329", 
             ColorId = 1, 
@@ -29,7 +29,7 @@ public sealed class PersonsControllerTest
             Id = 1,
             LastName = "Hetfield", 
             FirstName = "James", 
-            City = "?", 
+            City = "SomewhereInTheUSA", 
             PostalCode = "66666", 
             ColorId = 2, 
             Color = new Color {
@@ -52,6 +52,36 @@ public sealed class PersonsControllerTest
         var result = controller.Get();
         
         Assert.IsAssignableFrom<IAsyncEnumerable<Person>>(result);
+    }
+    
+    [Fact]
+    public async Task TestGetById()
+    {
+        var mockService = new Mock<IPersonsService>();
+
+        mockService.Setup(s => s.FindByIdAsync(1))
+            .Returns(Task.FromResult<Person?>(_persons[0]));
+
+        var controller = new PersonsController(mockService.Object);
+
+        var result = await controller.Get(1);
+        
+        Assert.IsAssignableFrom<OkObjectResult>(result);
+    }
+    
+    [Fact]
+    public async Task TestGetById_NotFound()
+    {
+        var mockService = new Mock<IPersonsService>();
+
+        mockService.Setup(s => s.FindByIdAsync(1))
+            .Returns(Task.FromResult<Person?>(null));
+
+        var controller = new PersonsController(mockService.Object);
+
+        var result = await controller.Get(1);
+        
+        Assert.IsAssignableFrom<NotFoundResult>(result);
     }
     
     [Fact]
