@@ -1,7 +1,7 @@
-using assecor_assessment_backend.Models;
+using AssecorAssessmentBackend.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace assecor_assessment_backend.Global;
+namespace AssecorAssessmentBackend.Global;
 
 public sealed class ApplicationDbContext : DbContext
 {

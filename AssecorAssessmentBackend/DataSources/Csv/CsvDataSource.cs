@@ -2,7 +2,7 @@ using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
 
-namespace assecor_assessment_backend.DataSources;
+namespace AssecorAssessmentBackend.DataSources;
 
 public sealed class CsvDataSource : IApplicationDataSource
 {

@@ -1,11 +1,11 @@
 using System.Globalization;
-using assecor_assessment_backend.DataSources;
-using assecor_assessment_backend.DataSources.Csv;
-using assecor_assessment_backend.DataStorage;
-using assecor_assessment_backend.Extensions;
-using assecor_assessment_backend.Global;
-using assecor_assessment_backend.Models;
-using assecor_assessment_backend.Services;
+using AssecorAssessmentBackend.DataSources;
+using AssecorAssessmentBackend.DataSources.Csv;
+using AssecorAssessmentBackend.DataStorage;
+using AssecorAssessmentBackend.Extensions;
+using AssecorAssessmentBackend.Global;
+using AssecorAssessmentBackend.Models;
+using AssecorAssessmentBackend.Services;
 using CsvHelper.Configuration;
 using Microsoft.EntityFrameworkCore;
 

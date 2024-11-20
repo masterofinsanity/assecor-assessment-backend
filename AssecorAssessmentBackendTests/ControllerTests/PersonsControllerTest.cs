@@ -1,8 +1,8 @@
-using assecor_assessment_backend.Api;
-using assecor_assessment_backend.DTO;
-using assecor_assessment_backend.Exceptions;
-using assecor_assessment_backend.Models;
-using assecor_assessment_backend.Services;
+using AssecorAssessmentBackend.DTO;
+using AssecorAssessmentBackend.Exceptions;
+using AssecorAssessmentBackend.Models;
+using AssecorAssessmentBackend.Services;
+using AssecorAssessmentBackend.Api;
 using LanguageExt;
 using Microsoft.AspNetCore.Mvc;
 using Moq;

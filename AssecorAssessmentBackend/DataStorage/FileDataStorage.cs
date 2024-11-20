@@ -1,9 +1,9 @@
-using assecor_assessment_backend.DataSources;
-using assecor_assessment_backend.Exceptions;
-using assecor_assessment_backend.Models;
+using AssecorAssessmentBackend.DataSources;
+using AssecorAssessmentBackend.Exceptions;
+using AssecorAssessmentBackend.Models;
 using LanguageExt;
 
-namespace assecor_assessment_backend.Global;
+namespace AssecorAssessmentBackend.Global;
 
 public sealed class FileDataStorage : IApplicationDataStorage
 {
@@ -33,6 +33,19 @@ public sealed class FileDataStorage : IApplicationDataStorage
             
             yield return person;
         }
+    }
+
+    public async Task<Person?> FindPersonById(long id)
+    {
+        await foreach (var person in _dataSource.AsAsyncEnumerable<Person>())
+        {
+            if (person.Id == id)
+            {
+                return person;
+            }
+        }
+
+        return null;
     }
 
     public async IAsyncEnumerable<Person> GetPeopleByFavoriteColor(uint id)

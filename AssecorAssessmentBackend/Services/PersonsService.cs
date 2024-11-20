@@ -1,14 +1,16 @@
-using assecor_assessment_backend.DTO;
-using assecor_assessment_backend.Exceptions;
-using assecor_assessment_backend.Global;
-using assecor_assessment_backend.Models;
+using AssecorAssessmentBackend.DTO;
+using AssecorAssessmentBackend.Exceptions;
+using AssecorAssessmentBackend.Global;
+using AssecorAssessmentBackend.Models;
 using LanguageExt;
 
-namespace assecor_assessment_backend.Services;
+namespace AssecorAssessmentBackend.Services;
 
 public interface IPersonsService
 {
     IAsyncEnumerable<Person> GetAllAsync();
+
+    Task<Person?> FindByIdAsync(long id);
 
     Task<Either<Exception, Person>> CreatePersonAsync(NewPersonDTO person);
 
@@ -30,6 +32,11 @@ public sealed class PersonsService : IPersonsService
     public IAsyncEnumerable<Person> GetAllAsync()
     {
         return _applicationDataSource.GetPeople();
+    }
+
+    public async Task<Person?> FindByIdAsync(long id)
+    {
+        return await _applicationDataSource.FindPersonById(id);
     }
 
     public IAsyncEnumerable<Person> GetByColorAsync(string color)

@@ -1,14 +1,14 @@
-using assecor_assessment_backend.DTO;
-using assecor_assessment_backend.Extensions;
-using assecor_assessment_backend.Models;
-using assecor_assessment_backend.Services;
+using AssecorAssessmentBackend.DTO;
+using AssecorAssessmentBackend.Extensions;
+using AssecorAssessmentBackend.Models;
+using AssecorAssessmentBackend.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace assecor_assessment_backend.Api;
+namespace AssecorAssessmentBackend.Api;
 
 [ApiController]
 [Route("[controller]")]
-public sealed class PersonsController
+public sealed class PersonsController : ControllerBase
 {
 
     private readonly IPersonsService _service;
@@ -22,6 +22,19 @@ public sealed class PersonsController
     public IAsyncEnumerable<Person> Get()
     {
         return _service.GetAllAsync();
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(long id)
+    {
+        var person = await _service.FindByIdAsync(id);
+
+        if (person == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(person);
     }
 
     [HttpGet("color/{color}")]

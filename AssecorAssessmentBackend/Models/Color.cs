@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace assecor_assessment_backend.Models;
+namespace AssecorAssessmentBackend.Models;
 
 public sealed class Color
 {

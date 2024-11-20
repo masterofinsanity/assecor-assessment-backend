@@ -1,10 +1,10 @@
-using assecor_assessment_backend.Common;
+using AssecorAssessmentBackend.Common;
 using LanguageExt;
 using LanguageExt.Common;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
-namespace assecor_assessment_backend.Extensions;
+namespace AssecorAssessmentBackend.Extensions;
 
 public static class EitherExtensions
 {

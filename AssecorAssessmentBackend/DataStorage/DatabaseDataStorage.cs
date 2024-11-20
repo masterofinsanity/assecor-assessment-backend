@@ -1,9 +1,9 @@
-using assecor_assessment_backend.Global;
-using assecor_assessment_backend.Models;
+using AssecorAssessmentBackend.Global;
+using AssecorAssessmentBackend.Models;
 using LanguageExt;
 using static Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions;
 
-namespace assecor_assessment_backend.DataStorage;
+namespace AssecorAssessmentBackend.DataStorage;
 
 public sealed class DatabaseDataStorage : IApplicationDataStorage
 {
@@ -22,39 +22,63 @@ public sealed class DatabaseDataStorage : IApplicationDataStorage
         }
     }
 
+    public async Task<Person?> FindPersonById(long id)
+    {
+        return await _context.People
+            .AsNoTracking()
+            .Where(p => p.Id == id)
+            .FirstOrDefaultAsync();
+    }
+
     public IAsyncEnumerable<Person> GetPeopleByFavoriteColor(uint id)
     {
-        return _context.People.Where(p => p.ColorId == id).AsAsyncEnumerable();
+        return _context.People
+            .AsNoTracking()
+            .Where(p => p.ColorId == id)
+            .AsAsyncEnumerable();
     }
 
     public IAsyncEnumerable<Person> GetPeopleByFavoriteColor(string name)
     {
-        return _context.People.Where(p => p.Color != null && p.Color.Name == name).AsAsyncEnumerable();
+        return _context.People
+            .AsNoTracking()
+            .Where(p => p.Color != null && p.Color.Name == name)
+            .AsAsyncEnumerable();
     }
 
     public Task<List<Color>> GetFavoriteColors()
     {
-        return _context.Colors.ToListAsync();
+        return _context.Colors
+            .AsNoTracking()
+            .ToListAsync();
     }
 
     public Task<List<Color>> GetColors()
     {
-        return _context.Colors.ToListAsync();
+        return _context.Colors
+            .AsNoTracking()
+            .ToListAsync();
     }
 
     public Task<List<Color>> GetColors(string searchText)
     {
-        return _context.Colors.Where(c => c.Name.Contains(searchText)).ToListAsync();
+        return _context.Colors
+            .AsNoTracking()
+            .Where(c => c.Name.Contains(searchText)).ToListAsync();
     }
 
     public Task<Color?> GetColorById(uint id)
     {
-        return _context.Colors.FirstOrDefaultAsync(c => c.Id == id);
+        return _context.Colors
+            .AsNoTracking()
+            .FirstOrDefaultAsync(c => c.Id == id);
     }
 
     public Task<Color?> GetColorByName(string name)
     {
-        return _context.Colors.FirstOrDefaultAsync(c => c.Name == name);
+        return _context.Colors
+            .AsNoTracking()
+            .FirstOrDefaultAsync(c => c.Name == name);
     }
 
     public async Task<Either<Exception, Person>> AddPersonAsync(Person person)

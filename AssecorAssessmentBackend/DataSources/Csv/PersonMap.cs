@@ -1,7 +1,7 @@
-using assecor_assessment_backend.Models;
+using AssecorAssessmentBackend.Models;
 using CsvHelper.Configuration;
 
-namespace assecor_assessment_backend.DataSources.Csv;
+namespace AssecorAssessmentBackend.DataSources.Csv;
 
 public sealed class PersonMap : ClassMap<Person>
 {

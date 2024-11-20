@@ -1,6 +1,6 @@
-using assecor_assessment_backend.Api;
-using assecor_assessment_backend.Models;
-using assecor_assessment_backend.Services;
+using AssecorAssessmentBackend.Api;
+using AssecorAssessmentBackend.Models;
+using AssecorAssessmentBackend.Services;
 using Moq;
 
 namespace AssecorAssessmentBackendTests.ControllerTests;

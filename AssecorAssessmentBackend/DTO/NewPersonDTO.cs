@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
-using assecor_assessment_backend.Models;
+using AssecorAssessmentBackend.Models;
 
-namespace assecor_assessment_backend.DTO;
+namespace AssecorAssessmentBackend.DTO;
 
 public sealed class NewPersonDTO
 {

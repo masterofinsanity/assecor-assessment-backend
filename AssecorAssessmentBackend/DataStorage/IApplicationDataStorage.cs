@@ -1,12 +1,13 @@
-using assecor_assessment_backend.Models;
+using AssecorAssessmentBackend.Models;
 using LanguageExt;
 
-namespace assecor_assessment_backend.Global;
+namespace AssecorAssessmentBackend.Global;
 
 public interface IApplicationDataStorage
 {
 
     public IAsyncEnumerable<Person> GetPeople();
+    public Task<Person?> FindPersonById(long id);
     public IAsyncEnumerable<Person> GetPeopleByFavoriteColor(uint colorId);
     public IAsyncEnumerable<Person> GetPeopleByFavoriteColor(string name);
     

@@ -1,4 +1,4 @@
-namespace assecor_assessment_backend.DataSources;
+namespace AssecorAssessmentBackend.DataSources;
 
 public interface IApplicationDataSource
 {

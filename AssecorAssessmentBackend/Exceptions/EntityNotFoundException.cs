@@ -1,6 +1,6 @@
-using assecor_assessment_backend.Common;
+using AssecorAssessmentBackend.Common;
 
-namespace assecor_assessment_backend.Exceptions;
+namespace AssecorAssessmentBackend.Exceptions;
 
 public sealed class EntityNotFoundException<TEntity, TPrimaryKey>: Exception, IObjectResult
 {

@@ -1,7 +1,7 @@
-using assecor_assessment_backend.DataStorage;
-using assecor_assessment_backend.Global;
+using AssecorAssessmentBackend.DataStorage;
+using AssecorAssessmentBackend.Global;
 
-namespace assecor_assessment_backend.Extensions;
+namespace AssecorAssessmentBackend.Extensions;
 
 public static class DataStorage
 {

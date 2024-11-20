@@ -1,8 +1,8 @@
-using assecor_assessment_backend.DataSources;
-using assecor_assessment_backend.Global;
-using assecor_assessment_backend.Models;
+using AssecorAssessmentBackend.DataSources;
+using AssecorAssessmentBackend.Global;
+using AssecorAssessmentBackend.Models;
 
-namespace assecor_assessment_backend.Extensions;
+namespace AssecorAssessmentBackend.Extensions;
 
 public static class ImportPeopleWebAppExtensions
 {

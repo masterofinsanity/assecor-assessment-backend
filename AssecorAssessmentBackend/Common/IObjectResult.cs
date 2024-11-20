@@ -1,4 +1,4 @@
-namespace assecor_assessment_backend.Common;
+namespace AssecorAssessmentBackend.Common;
 
 public interface IObjectResult
 {

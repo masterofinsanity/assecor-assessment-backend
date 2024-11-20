@@ -1,4 +1,4 @@
-namespace assecor_assessment_backend.Extensions;
+namespace AssecorAssessmentBackend.Extensions;
 
 public static class AsyncEnumerable
 {

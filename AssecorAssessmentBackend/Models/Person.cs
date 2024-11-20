@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 using CsvHelper.Configuration;
 
-namespace assecor_assessment_backend.Models;
+namespace AssecorAssessmentBackend.Models;
 
 public sealed class Person
 {

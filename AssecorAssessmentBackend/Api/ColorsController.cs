@@ -1,8 +1,8 @@
-using assecor_assessment_backend.Models;
-using assecor_assessment_backend.Services;
+using AssecorAssessmentBackend.Models;
+using AssecorAssessmentBackend.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace assecor_assessment_backend.Api;
+namespace AssecorAssessmentBackend.Api;
 
 [ApiController]
 [Route("[controller]")]

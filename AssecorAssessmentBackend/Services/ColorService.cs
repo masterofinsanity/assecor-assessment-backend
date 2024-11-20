@@ -1,9 +1,9 @@
-using assecor_assessment_backend.Models;
 using System.Linq;
-using assecor_assessment_backend.Global;
+using AssecorAssessmentBackend.Global;
+using AssecorAssessmentBackend.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace assecor_assessment_backend.Services;
+namespace AssecorAssessmentBackend.Services;
 
 public interface IColorService
 {
